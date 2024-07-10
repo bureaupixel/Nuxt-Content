@@ -6,7 +6,7 @@ navigation:
 ---
 
 ::div{.text-8xl .font-bold}
-Currating and visualizing a collection
+Curating and visualizing a collection
 ::
 
 ::div{.text-2xl }
