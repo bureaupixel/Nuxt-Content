@@ -1,5 +1,6 @@
 <template>
     <div>
+    <client-only>
       <div class="icon-container">
         <LightbulbOutlineIcon
           class="icon"
@@ -26,6 +27,7 @@
       <div class="mt-5 w-full">
           <p class="description">Color mode: {{ colorMode.preference }}</p>
         </div>
+    </client-only>    
     </div>
   </template>
   

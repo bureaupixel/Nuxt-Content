@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import { Drawer } from 'flowbite'
 import Menu from 'vue-material-design-icons/Menu.vue';
 
+
 /* The on mounted section makes the drawer show and hide */
 onMounted(() => {
    // set the drawer menu element

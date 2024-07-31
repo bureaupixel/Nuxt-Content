@@ -1,6 +1,6 @@
 <template>
     <div class="appTitle mt-5 mb-2">
-        <NuxtLink to="/">Currating and visualizing a collection</NuxtLink>
+        <NuxtLink to="/">Curating and visualizing a collection</NuxtLink>
     </div>
 </template>
 

@@ -4,7 +4,7 @@
         <div class="flex">
             <div class=" flex-none basis-11/12"><ColorMode /></div>
             <div class="flex-1 basis-1/12">
-                <NuxtLink to="https://github.com/bureaupixel/NuxtStudent" target="_blank">
+                <NuxtLink to="https://github.com/bureaupixel/Nuxt-collections" target="_blank">
                     <GithubIcon />
                 </NuxtLink>    
             </div>

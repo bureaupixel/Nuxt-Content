@@ -3,10 +3,11 @@ navigation:
   title: 'Homepage'
   author: 'Milli Vanilli'
   publishedAt: '15-06-2022'
+tags: [First tag, Second Tag]  
 ---
 
 ::div{.text-6xl .font-bold}
-Curating and visualizing a collection
+Curating and visualizing a collection based on categories
 ::
 
 ::div{.text-2xl }

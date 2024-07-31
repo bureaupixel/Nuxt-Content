@@ -17,6 +17,10 @@ export default defineNuxtConfig({
     experimental: {
       search: true
     },
+    // Ensure search index is enabled
+    search: {
+      index: true,
+    },
     navigation: {
       fields: ['author', 'publishedAt']
     }
