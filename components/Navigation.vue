@@ -1,23 +1,11 @@
+<script setup>
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
+</script>
 
 <template>
-  <div>
-    <ul class="navigation">
-    <li v-for="(item, index) in navigationTree" :key="index">
-      <NuxtLink :to="item._path">
-        {{ item.title }}
-      </NuxtLink>
-      <Navigation v-if="item.children" :navigation-tree="item.children" class="sub-navigation" />
+  <ul>
+    <li v-for="(page, index) in navigation" :key="index">
+        <a :href="page.path">{{ page.title }}</a>
     </li>
   </ul>
-  <NuxtLink to="/search">Search</NuxtLink>
-  </div>
 </template>
-
-<script lang="ts" setup>
-defineProps({
-  navigationTree: {
-    type: Array,
-    default: () => []
-  }
-})
-</script>

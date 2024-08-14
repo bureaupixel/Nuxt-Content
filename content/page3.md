@@ -1,9 +1,10 @@
 ---
+title: 'Page 3'
+path: '/page3'
 navigation:
   title: 'Page 3'
-  author: 'Milli Vanilli'
-  publishedAt: '17-06-2022'
-  navigation: 'false'
+description: 'This is the third article.'
+tags: [Firsttag, Secondtag]   
 ---
 
 

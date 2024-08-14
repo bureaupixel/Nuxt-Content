@@ -1,63 +1,42 @@
-# Media & Information Design - LUCA Bxl - Nuxt 3 Content
+# Content v2 Minimal Starter
 
-This is a template for students Media & Information Design - LUCA Bxl. It is a Nuxt based and is extended with 3 modules: [Nuxt Image](https://nuxt.com/modules/image), [Tailwind](https://nuxt.com/modules/tailwindcss) and [Color mode](https://nuxt.com/modules/color-mode)
-
+Look at the [Content documentation](https://content.nuxt.com/) to learn more.
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
+# yarn
+yarn install
+
 # npm
 npm install
 
 # pnpm
 pnpm install
-
-# yarn
-yarn install
-
+```
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+Start the development server on http://localhost:3000
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+```
 
 ## Production
 
 Build the application for production:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
+```
 
 Locally preview production build:
 
 ```bash
-# npm
 npm run preview
+```
 
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

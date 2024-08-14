@@ -1,71 +1,23 @@
-<script setup  lang="ts">
-import { onMounted } from 'vue'
-import { Drawer } from 'flowbite'
-import Menu from 'vue-material-design-icons/Menu.vue';
-
-
-/* The on mounted section makes the drawer show and hide */
-onMounted(() => {
-   // set the drawer menu element
-    const $targetEl = document.getElementById('drawer-swipe');
-    const $drawerHideButton = document.getElementById('drawer-hide-button');
-    const $drawerShowButton = document.getElementById('drawer-show-button');
-    // options with default values
-    const options = {
-        placement: 'right',
-        backdrop: true,
-        bodyScrolling: true,
-        edge: false,
-        edgeOffset: '',
-        backdropClasses: 'bg-zinc-100 dark:bg-zinc-900 bg-opacity-90 dark:bg-opacity-80 fixed inset-0 z-30',
-        onHide: () => { /* console.log('drawer is hidden'); */ },
-        onShow: () => { /* console.log('drawer is shown');*/  },
-        onToggle: () => { /* console.log('drawer has been toggled');*/  }
-    };
-    if ($targetEl) {
-        /*
-        * targetEl: required
-        * options: optional
-        */
-        const drawer = new Drawer($targetEl, options);
-        // show the drawer
-        drawer.hide();
-        $drawerHideButton.addEventListener('click', () => {drawer.hide();})
-        $drawerShowButton.addEventListener('click', () => {drawer.show();})
-    }
-});
-
-
-const { data: navigation } = await useAsyncData('navigation', () => {
-  return fetchContentNavigation()
-})
-
-
-</script>
-
 <template>
-<!-- drawer init and toggle -->
-<div class="flex">
-    <div class="flex-auto w-1 pt-3">
-    </div>
-    <!-- button to hide the drawer -->
-    <div class="flex-row  pt-5 pr-5 justify-end">
-        <button id="drawer-show-button" type="button" aria-controls="drawer-swipe"  >
-            <Menu :size="25"/>
-    </button>
-    </div>
-</div> 
-<!-- the drawer itself-->
-<div class="max-w-4xl mx-auto">
-    <div id="drawer-swipe" class="fixed z-40 h-screen p-4 overflow-y-auto" tabindex="-1" aria-labelledby="drawer-label">
-        <!-- Main  button to toggle the drawer -->
-        <button id="drawer-hide-button" type="button" aria-controls="drawer-swipe" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
-            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            <span class="sr-only">Close menu</span>
+    <div class="flex animate-fade animate-once animate-delay-[1000ms]">
+      <div class="flex-auto w-1 pt-3"></div>
+      <div class="flex-row pt-5 justify-end">
+        <button style="margin-left: 16px" @click="drawer = true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"></path>
+          </svg>
         </button>
-        <!-- Title on top of the drawer -->
-        <div class="mt-2 mb-5">
-            <TitleBlock />
+      </div>
+    </div>
+  
+    <el-drawer
+      v-model="drawer"
+      class="drawer"
+      :direction="direction"
+      :size="500"
+    >
+    <!-- Title on top of the drawer -->
+    <div class="mt-2 mb-5">
             <!-- Start navigation from content -->
             <nav>
                 <Navigation :navigation-tree="navigation" />
@@ -73,15 +25,19 @@ const { data: navigation } = await useAsyncData('navigation', () => {
              <!-- End navigation from content -->
         </div>
         <div class="mt-5 mb-5"><Footer /></div>
-    </div>
-</div>
-</template>
+    
+    </el-drawer>
+  </template>
+  
+  <script lang="ts" setup>
+  import { ref } from 'vue'
+  import type { DrawerProps } from 'element-plus'
+  import Navigation from './Navigation.vue';
 
-<style>
-/* color settings for the background of the dark switch section */
-#drawer-swipe { background-color: rgba(255, 255, 255, 0.98); width: 50vw;}
-.dark-mode #drawer-swipe { background-color:rgba(22, 23, 21, 0.95)}
-/* color settings for the rulers of the drawer section */
-hr{border-color: #D1D1D1;}
-.dark-mode hr{ border-color: aliceblue;}
-</style>
+  const navigation = ref([]);
+  
+  const drawer = ref(false)
+  const direction = ref<DrawerProps['direction']>('rtl')
+  </script>
+  
+        

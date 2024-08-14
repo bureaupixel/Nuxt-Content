@@ -1,17 +1,17 @@
 ---
+title: 'Page 1'
+path: '/page1'
 navigation:
   title: 'Page 1'
-  author: 'Milli Vanilli'
-  publishedAt: '15-06-2022'
-  description: 'This is the first article.'
-tags: [First tag, Second Tag]    
+description: 'This is the first article.'
+tags: [Firsttag, Secondtag]    
 ---
 
 ::div{.text-8xl .font-bold .pb-5}
 Page 1 
 ::
 
-![my image](/img/image1.jpg)
+![my image](/images/my-image.jpg)
 
 Lorem test ipsum dolor sit amet, consectetur adipiscing elit. Curabitur est velit, placerat vitae placerat semper, maximus vel urna. Quisque at ipsum vitae massa mattis ultrices. Nam maximus mattis nunc at ultrices. Etiam lorem ex, varius id efficitur id, gravida a ex. Donec ultricies sapien in ligula pulvinar, a condimentum mi consectetur. Sed in tortor id lectus mattis hendrerit nec id diam. Etiam eu varius ante. Curabitur eu convallis lorem, nec eleifend ex. Maecenas at leo ante.
 

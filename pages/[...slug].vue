@@ -1,10 +1,5 @@
 <template>
-    <main>
-      <ArticleTags />
-      <ContentDoc />
-    </main>
-  </template>
-
-
-<script>
-</script>
+  <main>
+    <ContentDoc />
+  </main>
+</template>
