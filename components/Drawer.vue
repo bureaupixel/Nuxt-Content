@@ -9,12 +9,12 @@
         </button>
       </div>
     </div>
-  
+
     <el-drawer
       v-model="drawer"
       class="drawer"
       :direction="direction"
-      :size="500"
+      size="90%"
     >
     <!-- Title on top of the drawer -->
     <div class="mt-2 mb-5">
@@ -40,4 +40,7 @@
   const direction = ref<DrawerProps['direction']>('rtl')
   </script>
   
-        
+  <style>
+  .el-drawer  { background-color: rgba(255, 255, 255, 0.99);}
+  .dark-mode .el-drawer { background-color: rgba(30, 30, 30, 0.98); }
+  </style>
